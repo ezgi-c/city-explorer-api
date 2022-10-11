@@ -26,8 +26,20 @@ Name of feature: Weather
 
 Estimate of time needed to complete: 2 hrs
 
-Start time: 4:20 pm, 7pm
+Start time: 4:20 pm
 
-Finish time: 6:25 pm, 9pm
+Finish time: 9pm
 
-Actual time needed to complete: 4 hrs
+Actual time needed to complete: ~ 5 hrs
+
+---------------------------
+
+Name of feature: Errors
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 5pm
+
+Finish time: 5:30pm
+
+Actual time needed to complete: 30 mins
