@@ -21,18 +21,18 @@ app.get('/', (request, response) => {
   response.send('testing, testing...is this thing on?');
 });
 
-// define an endpoint that gets the shoppingList data and returns it to React
+// define an endpoint that gets the weather data and returns it to React
 app.get('/weather', (req, res, next) => {
   try {
-    // grab the searchQuery from the request object 
-    // notice that the query parameter is named "type"
-    // "type" is the name of query parameter we must send along with Axios from React in order to ask for data from our server
-    const type = req.query.city.toLowerCase();
-    console.log('query parameter: ', req.query);
-    console.log('type: ', type);
-    const forecast = new Forecast(type);
-    const properties = forecast.getData();
-    res.status(200).send(properties);
+    // grab the searchQuery from the request day 
+    // const lat = req.query.lat;
+    // const lon = req.query.lon;
+    // const searchQuery = req.query.searchQuery;
+    // OR
+    const {lat, lon, searchQuery} = req.query;
+    const forecast = new Forecast(searchQuery);
+    const forecastArray = forecast.getForecast();
+    res.status(200).send(forecastArray);
   } catch(error) {
     // next can be used to pass an error to express for the error middleware to handle
     next(error.message);
@@ -40,20 +40,19 @@ app.get('/weather', (req, res, next) => {
 });
 
 class Forecast {
-  constructor(type){
-    // find method to find the city of list we want to return
-    console.log(type);
-    let { city_name, data } = weatherData.find(object => object.city_name.toLowerCase() === type || object.lon === type || object.lat === type);
-    console.log(data);
-    this.city = city_name;
-    this.forecastData = data;
+  constructor(citySearchedFor){
+    // find method to find the weather data of the city we searched for
+    console.log(citySearchedFor);
+    let { data } = weatherData.find(city => city.city_name.toLowerCase() === citySearchedFor.toLowerCase());
+    // console.log(data);
+    this.data = data;
   }
 
-  // a method that gets just the name and desc properties from our item objects in the data array
-  getData() {
-    return this.forecastData.map(object => ({
-      date: object.valid_date,
-      description: object.weather.description
+  // a method that gets just the date and desc properties from our days in the data array
+  getForecast() {
+    return this.data.map(day => ({
+      date: day.datetime,
+      description: day.weather.description
     }));
   }
 }
@@ -76,4 +75,4 @@ app.use((error, request, response, next) => {
 // this line of code needs to be the LAST line in the file
 // listen tells our app which port to listen on
 // which port to serve our server on
-app.listen(PORT, console.log(`listening on PORT ${PORT}`));
+app.listen(PORT, () => console.log(`listening on PORT ${PORT}`));
