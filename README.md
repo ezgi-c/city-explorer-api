@@ -19,6 +19,13 @@
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+Created WRRC whiteboard for lab 08 with Manuch.
+
+## Lab 08 White Board
+
+<img src="lab08-whiteboard.png">
+
+
 Time Estimates
 For each of the lab features, make an estimate of the time it will take you to complete the feature, and record your start and finish times for that feature:
 
@@ -43,3 +50,15 @@ Start time: 5pm
 Finish time: 5:30pm
 
 Actual time needed to complete: 30 mins
+
+---------------------------
+
+Name of feature: Weather (live)
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 6:40pm
+
+Finish time: 10:30pm
+
+Actual time needed to complete: not complete
