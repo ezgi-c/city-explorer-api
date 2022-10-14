@@ -57,8 +57,8 @@ Name of feature: Weather (live)
 
 Estimate of time needed to complete: 2 hours
 
-Start time: 6:40pm
+Start time: 6:40pm , 3:35
 
-Finish time: 10:30pm
+Finish time: 10:30pm, 5:10
 
-Actual time needed to complete: not complete
+Actual time needed to complete: 5.5 hrs
