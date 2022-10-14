@@ -24,6 +24,7 @@ app.get('/', (request, response) => {
 });
 
 // define an endpoint that gets the weather data and returns it to React
+
 app.get('/weather', async (request, response, next) => {
   try {
     const url = `https://api.weatherbit.io/v2.0/forecast/daily?key=${process.env.WEATHER_API_KEY}&lat=${request.query.lat}&lon=${request.query.lon}&days=7`;
