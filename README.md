@@ -73,4 +73,16 @@ Start time:
 
 Finish time: 
 
-Actual time needed to complete: 
+Actual time needed to complete: ~4 hours
+
+---------------------------
+
+Name of feature: Modularize the back-end codebase.
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 1:30 pm
+
+Finish time: 
+
+Actual time needed to complete: hours
