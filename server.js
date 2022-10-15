@@ -6,7 +6,7 @@ const cors = require('cors');
 require('dotenv').config();
 const getWeather = require('./modules/weather');
 const getMovies = require('./modules/movies');
-const notFound = require('./modules/notFound');
+const notFound = require('./modules/notfound');
 
 // const weatherData = require('./data/weather.json'); // dummy data
 
