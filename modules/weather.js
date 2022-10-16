@@ -22,7 +22,7 @@ function getWeather(request, response) {
 class Forecast {
   constructor(day){
     this.date = day.datetime;
-    this.forecast = day.weather.description;
+    this.forecast = `Low of ${day.low_temp}℃, high of ${day.high_temp}℃ with ${day.weather.description.toLowerCase()}`;
     console.log(day);
   }
 }
