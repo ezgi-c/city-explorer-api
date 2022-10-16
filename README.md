@@ -77,12 +77,24 @@ Actual time needed to complete: ~4 hours
 
 ---------------------------
 
+Name of feature: Errors (revisited)
+
+Estimate of time needed to complete: 30 mins
+
+Start time: 7:20pm
+
+Finish time: 7:40pm
+
+Actual time needed to complete: 20 mins
+
+---------------------------
+
 Name of feature: Modularize the back-end codebase.
 
 Estimate of time needed to complete: 2 hours
 
 Start time: 1:30 pm
 
-Finish time: 2:40 pm
+Finish time: 3:20 pm
 
-Actual time needed to complete: 70 minutes
+Actual time needed to complete: ~2 hrs
