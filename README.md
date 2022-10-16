@@ -25,6 +25,9 @@ Created WRRC whiteboard for lab 08 with Manuch.
 
 <img src="lab08-whiteboard.png">
 
+## Lab 09 White Board
+
+<img src="lab09-whiteboard.png">
 
 Time Estimates
 For each of the lab features, make an estimate of the time it will take you to complete the feature, and record your start and finish times for that feature:
