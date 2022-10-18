@@ -28,6 +28,7 @@ class Movie {
     this.image_url = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
     this.popularity = movie.popularity;
     this.released_on = movie.release_date;
+    // this.uniqueId= movie_id // possible way to fix key property error
     console.log(movie);
   }
 }
