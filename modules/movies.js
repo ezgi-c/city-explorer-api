@@ -2,20 +2,33 @@
 
 const axios = require('axios');
 
-function getMovies(request, response) {
-  const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.MOVIES_API_KEY}&query=${request.query.searchQuery}`;
-  axios
-    .get(url)
-    .then(movieResponse => {
-      const moviesArray = movieResponse.data.results.map(movie => new Movie(movie));
-      // console.log(movieResponse.data);
-      response.status(200).send(moviesArray);
-    }).catch(err => {
-      console.error(err);
-      response.status(500).send(`server error: ${err}`);
-    });
-}
+const cache = require('./cache.js');
 
+function getMovies(request, response) {
+  const searchQuery = request.query.searchQuery;
+  const key = 'movies-' + searchQuery;
+  if (cache[key] && (Date.now() - cache[key].timestamp < 2,628000000)) { // 1 month in milliseconds
+    console.log('getting info from cache (cache hit): ', key);
+    response.status(200).send(cache[key]);
+  } else {
+    console.log('getting new API data from axios (cache miss) ', key);
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.MOVIES_API_KEY}&query=${searchQuery}`;
+    axios
+      .get(url)
+      .then(movieResponse => {
+        const moviesArray = movieResponse.data.results.map(movie => new Movie(movie));
+        // console.log(movieResponse.data);
+        cache[key] = moviesArray;
+        cache[key].timestamp = Date.now();
+        console.log(cache[key].timestamp);
+        console.log('putting the new data in cache: ', cache);
+        response.status(200).send(moviesArray);
+      }).catch(err => {
+        console.error(err);
+        response.status(500).send(`server error: ${err}`);
+      });
+  }
+}
 
 class Movie {
   constructor(movie){

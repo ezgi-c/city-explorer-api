@@ -101,3 +101,15 @@ Start time: 1:30 pm
 Finish time: 3:20 pm
 
 Actual time needed to complete: ~2 hrs
+
+---------------------------
+
+Name of feature: Performance
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 7 pm
+
+Finish time: 8pm
+
+Actual time needed to complete: 1 hour
