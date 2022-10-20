@@ -7,9 +7,8 @@ function getMovies(request, response) {
   axios
     .get(url)
     .then(movieResponse => {
-      console.log(movieResponse.data);
       const moviesArray = movieResponse.data.results.map(movie => new Movie(movie));
-      console.log(movieResponse.data);
+      // console.log(movieResponse.data);
       response.status(200).send(moviesArray);
     }).catch(err => {
       console.error(err);
@@ -28,8 +27,7 @@ class Movie {
     this.image_url = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
     this.popularity = movie.popularity;
     this.released_on = movie.release_date;
-    // this.uniqueId= movie_id // possible way to fix key property error
-    console.log(movie);
+    // console.log(movie);
   }
 }
 
