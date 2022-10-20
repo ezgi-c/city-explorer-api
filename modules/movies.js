@@ -7,7 +7,7 @@ const cache = require('./cache.js');
 function getMovies(request, response) {
   const searchQuery = request.query.searchQuery;
   const key = 'movies-' + searchQuery;
-  if (cache[key] && (Date.now() - cache[key].timestamp < 2,628000000)) { // 1 month in milliseconds
+  if (cache[key] && (Date.now() - cache[key].timestamp < 2628000000)) { // 1 month in milliseconds
     console.log('getting info from cache (cache hit): ', key);
     response.status(200).send(cache[key]);
   } else {
